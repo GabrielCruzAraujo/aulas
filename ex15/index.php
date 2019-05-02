@@ -11,13 +11,13 @@
 			<form action="resultado.php" method="get">
 				<!-- Mudar label e mudar o name do input -->
 				<div class="item">
-					<label for="">Digite os anos de uma pessoa</label>
-					<input type="text" name="anos">
+					<label for="">Imprime número de 0 a 100</label>
+					<!-- <input type="text" name="anos"> -->
 				</div>
 				<!-- fim -->
 				
 				<div class="footer-form">
-					<button id="botao" type="submit">Enviar</button>
+					<button id="botao" type="submit">Executar</button>
 					
 				</div>
 			</form>
