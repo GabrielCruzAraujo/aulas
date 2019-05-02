@@ -11,13 +11,25 @@
 			<form action="resultado.php" method="get">
 				<!-- Mudar label e mudar o name do input -->
 				<div class="item">
-					<label for="">Quer contar até quanto?</label>
-					<input type="text" name="valor">
+					<label for="">Digite o valor 1</label>
+					<input type="text" name="num">
 				</div>
 				<!-- fim -->
 				<div class="item">
-					<label for="">Qual será o valor do salto?</label>
-					<input type="text" name="salto">
+					<label for="">Digite o valor 2</label>
+					<input type="text" name="num1">
+				</div>
+				<div class="item">
+					<label for="">Digite o valor 3</label>
+					<input type="text" name="num2">
+				</div>
+				<div class="item">
+					<label for="">Digite o valor 4</label>
+					<input type="text" name="num3">
+				</div>
+				<div class="item">
+					<label for="">Digite o valor 5</label>
+					<input type="text" name="num4">
 				</div>
 				<div class="footer-form">
 					<button id="botao" type="submit">Enviar</button>
