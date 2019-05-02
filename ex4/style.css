@@ -1,0 +1,93 @@
+* {
+		margin: 0;
+		padding: 0; 
+	}
+	body {
+		background: #2C97DE;
+	}
+	.conteudo {
+		
+		width: 100%;
+		height: auto;
+	}
+
+	.campos {
+		width: 40%;		
+		height: auto;
+		background: #fff;
+		border-radius: 5px;
+		border: 1px solid #D3D3D3;
+		margin: 0 auto;
+		margin-top: 5%;
+	}
+
+	.conteudo .campos .item {
+		margin: 20px;
+	}
+	.conteudo .campos .item label {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 500;
+		margin-right: 10px; 
+
+	}
+	.conteudo .campos .item input {
+		border-radius: 5px; 		
+		border: 1px solid #D3D3D3;
+		height: 30px;
+		width: 200px;
+		font-family: 'Montserrat', sans-serif;
+		padding-left: 10px;
+	    font-size: 17px;
+	    font-weight: 500;
+	    color: #FF4500;
+	    text-align: center;
+		/*font-size: */
+	}
+
+	#botao {
+		color: #2C97DE;
+	    text-align: center;
+	    font-size: 16px;
+	    border: 1px solid #2C97DE;
+	    padding: 6px 12px 6px 12px;
+	    background: transparent;
+	    font-family: "Segoe UI";
+	    font-family: 'Montserrat', sans-serif;
+	    font-size: 14px;
+	    font-weight: 500;
+	    text-decoration: none solid rgb(0,123,255);
+	    /*height: 38px;*/
+	    width: 84px;
+	    line-height: 24px;
+	    display: inline-block;
+	    border-radius: 32px;
+	    transition: 0.35s ease-in-out 0s;	
+		margin-right: 10px !important;		
+		cursor: pointer;
+		background: #fff;
+		
+
+	}
+	#botao:hover {
+		background: #2C97DE;
+		color: #fff;
+
+	}
+
+	.footer-form {
+		height: 50px;
+		width: 100%;
+		/*background: #DCDCDC;*/
+		background: transparent;
+		padding-top: 10px;
+		text-align: right;
+		
+
+	}
+	.clear {
+		clear: both;
+	}
+
+	p {
+		
+	}
