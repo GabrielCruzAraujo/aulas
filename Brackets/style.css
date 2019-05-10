@@ -1,0 +1,77 @@
+div#topo{
+    width: 945px;
+    height: 145px;
+    margin: o auto;
+}
+
+div#logo{
+    width: 310px;
+    height: 80px;
+    margin-top: 50px;
+    float: left;
+    margin-left: 218px;
+}
+
+div#login{
+    width: 180px;
+    height: 70px;
+    margin-top: 50px;
+    float: right;
+    
+}
+
+div#login {
+    font-family;Verdana;
+    font-size:12px
+}
+
+div#menu{
+    background: #373737;
+    width: 945px;
+    height: 65px;
+    margin: auto;
+}
+
+div#menu a{
+    color:#fff;
+    font-family: verdana;
+    font-size:12px ;
+    text-decoration: none;
+    margin-top: 25px;
+    margin-left: 50px;
+    display: block;
+    float: left;
+}
+
+#div#menu a:hover{
+    color:#00c6c6; 
+}
+
+div#banner{
+    width: 945px;
+    height: 327px;
+    margin: 0 auto;
+}
+
+div#container{
+    width: 945px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+div.chamada{
+    width: 245px;
+    height: 369px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: center;
+}
+
+div.chamada h1{
+    font-family: Arial;
+}
+
+div.chamada p{
+    font-family: Arial;
+}
