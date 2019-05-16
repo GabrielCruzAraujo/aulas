@@ -23,7 +23,27 @@
 
 
 <script>
-$(function() {
+	var formAnim = {
+	$form: $('#form'),
+	animClasses: ['face-up-left', 'face-up-right', 'face-down-left', 'face-down-right', 'form-complete', 'form-error'],
+	resetClasses: function() {
+		var $form = this.$form;
+		
+		$.each(this.animClasses, function(k, c) {
+			$form.removeClass(c);
+		});
+	},
+	faceDirection: function(d) {
+		this.resetClasses();
+		
+		d = parseInt(d) < this.animClasses.length? d : -1;
+		
+		if(d >= 0) {
+			this.$form.addClass(this.animClasses[d]);
+		} 
+	}
+}
+
 	
 
 	var $input = $("#email, #password"),
@@ -36,12 +56,14 @@ $(function() {
 		
 		if (completed) {
 			formAnim.faceDirection(1);
+		} else {
 			formAnim.faceDirection(0);
-		}		
+		}
+				
 	});
 
 	$input.blur(function() {
-		formAnim.resetClasses();
+	formAnim.resetClasses();
 	});
 
 	$input.on("input paste keyup", function() {
@@ -94,7 +116,7 @@ $(function() {
 	});
 
 		
-});
+
 
 </script>		
 	
