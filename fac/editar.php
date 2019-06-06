@@ -30,11 +30,11 @@ $conexao = mysqli_connect('localhost','root','','instituicao');
 
 	if ($op_insercao) {
 		echo "Editado com sucesso!";
-		header("refresh: 5;adicionarCurso.php");
+		header("refresh: 2;adicionarCurso.php");
 
 	} else {
 		echo "Erro ao tentar editar!";
-		header("refresh: 5;adicionarCurso.php ");
+		header("refresh: 2;adicionarCurso.php ");
 	}
 	
 		mysqli_close($conexao);

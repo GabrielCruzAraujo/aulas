@@ -15,7 +15,6 @@ $conexao = mysqli_connect('localhost','root','','instituicao');
 	
 	
 	if ($op_insercao) {
-		echo "Excluido!";
 		header("refresh: 3;adicionarCurso.php");
 
 	} else {

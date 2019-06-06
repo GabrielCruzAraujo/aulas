@@ -28,18 +28,6 @@
 			$mostrar = $registro['mostrar'];
 		}
 
-
-		/*echo $mostrar;
-
-		if ($mostrar == 'OFF') {
-			echo "são iguais";
-		} else {
-			echo "não são iguais";
-
-		}
-*/
-	
-
 ?>
 
 <!DOCTYPE html>
