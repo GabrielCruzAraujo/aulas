@@ -10,7 +10,7 @@
 		echo "Erro ao conectar no banco de dados<br>";		
 	}
 
-
+	$id = $_GET['id'];
 	$nome = $_GET['nome_pessoa'];
 	$email = $_GET['email'];
 	$id_grupo = $_GET['id_grupo'];
@@ -21,32 +21,28 @@
 	$nr_vinculo = 1;
 	$regime_trabalho = 40;
 
+	$sql = " update pessoa
+		 		 set nome_pessoa = '$nome', email = '$email'
+		 		 where id_pessoa = '$id' ";
+		
+	$sql2 = " update dado_funcional
+				 set id_grupo = '$id_grupo', id_categoria = '$id_categoria', orgao_lotacao = '$orgao_lotacao', orgao_exercicio = '$orgao_exercicio'
+				 where id_pessoa = '$id'";
 
-
-
-	$id = $funcoes->ultimoId('pessoa') + 1 ;
-	$sql = "insert into pessoa
-			(id_pessoa,nome_pessoa, email)
-			values
-			($id,'$nome','$email');";
-
-		$sql2 = "insert into dado_funcional
-		 (matricula,id_grupo,id_categoria,orgao_lotacao,orgao_exercicio,id_pessoa,data_ingresso,nr_vinculo,regime_trabalho)
-		 values
-		 ('$id','$id_grupo','$id_categoria','$orgao_lotacao','$orgao_exercicio','$id','$data_cadastro','$nr_vinculo','$regime_trabalho')";
-
-	
 
 	$op_insercao1 = mysqli_query($conexao, $sql);			
 	$op_insercao2 = mysqli_query($conexao, $sql2);			
-			
+	
 
-	if ($op_insercao2) {
-		echo "Salvo com sucesso!";
-		header("refresh: 2;index.php");
+	if ($op_insercao1) {
+		if ($op_insercao2) {
+			echo "Editado com sucesso!";
+			header("refresh: 2;index.php");
+			
+		}
 
 	} else {
-		echo "Erro ao tentar salvar";
+		echo "Erro ao tentar editar";
 		header("refresh: 2;index.php");
 	}
 

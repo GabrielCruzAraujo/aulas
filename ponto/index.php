@@ -117,7 +117,8 @@
 				<td><?php echo utf8_encode($dado["orgao_lotacao"]); ?></td>
 				<td><?php echo utf8_encode($dado["orgao_exercicio"]); ?></td>
 				<td><?php echo $dado["email"]; ?></td>
-				<td><a href="cadEditar.php?id=<?php echo $dado['id_pessoa']; ?>"  >Editar</a></td> 
+				<td><a href="cadEditar.php?id=<?php echo $dado['id_pessoa']; ?>"  >Editar</a></td>
+				<td><a href="excluir.php?id=<?php echo $dado['id_pessoa']; ?>">Excluir</a></td> 
 			</tr>
 			<?php  
 
