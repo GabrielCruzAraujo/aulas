@@ -43,26 +43,43 @@
 <html>
 <head>
 	<title>Tela de Usuário</title>
-	<style type="text/css">
-
-		#btn {
-			background: orange;
-		}
-
-
-		.btn {
-			background: blue;
-		}
-
-	</style>
+	
 </head>
+<style type="text/css">
+		i {
+			color: #fff;
+		}
+	</style>
 <body>
-	<h2>Tela de Usuário</h2>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<body>
+		<main>
+			<div class="container text-center">
+				<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Tela de Usuário</h1>
+
+	</body>
+
+
 	<form action="salvar.php" method="get">
-		<label>Nome</label>
-		<input type="text" name="nome_pessoa" required=""><br/>
-		<label>Email</label>
-		<input type="text" name="email"><br/>
+		<div class="input-group mb-2">
+		<div class="input-group-prepend">
+				<div class="input-group-text bg-warning"></i>Nome</div>
+			</div>
+		<input type="text" name="nome_pessoa" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+		<div class="input-group mb-2">	   	
+			<div class="input-group-prepend">
+				<div class="input-group-text bg-warning"></i>Email</div>
+			</div>
+			<input type="text" name="email" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+		</div>	
+
+		<!-- 
 		<label for="grupo_emprego"> Grupo</label>
 		<select name="id_grupo">
 			<option>Selecione</option>
@@ -90,35 +107,48 @@
 			<?php foreach ($execute_sql_orgao as $key => $linha): ?>
 				<option value="<?php echo $linha['id_orgao'] ?>"><?php echo utf8_encode($linha['nome_orgao']) ?></option>
 			<?php endforeach ?>
-		</select><br/>
-		<button type="submit">Salvar</button>
+		</select><br/> -->
+		<div class="input-group mb-2">			
+		   <div class="col-sm-2"></div>
+		   <div class="col-sm-2"></div>
+		   <div class="col-sm-2"></div>
+		   <div class="col-sm-2"></div>
+		   <div class="col-sm-2"></div>
+		   <div class="col-sm-2" id="grupo-salvar"> 
+		   		<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-plus"></i></button>
+		   </div>
 		<!-- <input type="text" name="Pesquisar">
 		<button type="submit">Pesquisar</button><br/> -->
 
 	</form>
-		<table border="1">
+
+	<div class="d-flex table-data">
+			<table class="table table-striped table-dark">
+				<thead class="thead-dark">
+			
 			<tr>
-				<td>id_Pessoa</td>
-				<td>Nome_Pessoa</td>
-				<td>Id_Grupo</td>
+				<td>ID</td>
+				<td>Nome</td>
+				<!-- <td>Id_Grupo</td>
 				<td>Id_Categoria</td>
 				<td>Orgao_Lotacao</td>
-				<td>Orgao_Exercicio</td>
+				<td>Orgao_Exercicio</td> -->
 				<td>Email</td>
 				<td></td>
 				
 				</tr>
+				</thead>
 			<?php foreach ($op_insercao as $key => $dado): ?>				
 			<tr>
 				<td><?php echo $dado["id_pessoa"]; ?></td>
 				<td><?php echo $dado["nome_pessoa"]; ?></td>
-				<td><?php echo utf8_encode($dado["nome_grupo"]); ?></td>
+				<!-- <td><?php echo utf8_encode($dado["nome_grupo"]); ?></td>
 				<td><?php echo utf8_encode($dado["nome_categoria"]); ?></td>
 				<td><?php echo utf8_encode($dado["orgao_lotacao"]); ?></td>
-				<td><?php echo utf8_encode($dado["orgao_exercicio"]); ?></td>
+				<td><?php echo utf8_encode($dado["orgao_exercicio"]); ?></td> -->
 				<td><?php echo $dado["email"]; ?></td>
-				<td><a href="cadEditar.php?id=<?php echo $dado['id_pessoa']; ?>"  >Editar</a></td>
-				<td><a href="excluir.php?id=<?php echo $dado['id_pessoa']; ?>">Excluir</a></td> 
+				<td><a href="cadEditar.php?id=<?php echo $dado['id_pessoa']; ?>"i class="fas fa-edit btnedit"></i></td>
+				<td><a href="excluir.php?id=<?php echo $dado['id_pessoa']; ?>"><i class="fas fa-trash-alt"></i></a></td> 
 			</tr>
 			<?php  
 
@@ -130,5 +160,12 @@
 			
 			
 		</table>
+	
+	</main>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	</body>
 </html>
