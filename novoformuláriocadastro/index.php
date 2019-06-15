@@ -35,7 +35,7 @@
 <html>
 <head>
 	<title>Novo Cadastro</title>
-	<style type="text/css">
+	<!-- <style type="text/css">
 
 		#btn {
 			background: orange;
@@ -46,7 +46,8 @@
 			background: blue;
 		}
 
-	</style>
+	</style> -->
+	
 </head>
 <body>
 
@@ -54,6 +55,7 @@
 		<label>Nome do Professor</label>
 		<input type="text" name="Descricao" required=""><br/>
 		<label for="id_curso"> Escolha seu curso</label>
+		
 		<select name="id_curso">
 			<?php foreach ($execute_sql_curso as $key => $linha): ?>
 				<option value="<?php echo $linha['id_individuo'] ?>"><?php echo utf8_encode($linha['Descricao']) ?></option>
