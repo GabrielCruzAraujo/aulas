@@ -16,11 +16,11 @@ $conexao = mysqli_connect('localhost','root','','instituicao');
 	
 	if ($op_insercao) {
 		echo "Excluido!";
-		header("refresh: 5;adicionarCurso.php");
+		header("refresh: 1;adicionarCurso.php");
 
 	} else {
 		echo "Erro ao tentar excluir!";
-		header("refresh: 5;adicionarCurso.php ");
+		header("refresh: 1;adicionarCurso.php ");
 	}
 	
 		mysqli_close($conexao);
