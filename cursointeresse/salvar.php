@@ -27,14 +27,14 @@
 	$op_insercao = mysqli_query($conexao, $sql);			
 	
 
-	/*if ($op_insercao) {
+	if ($op_insercao) {
 		echo "Salvo com sucesso!";
-		header("refresh: 1;index.php");*/
-/*
+		header("refresh: 1;index.php");
+
 	} else {
 		echo "Erro ao tentar salvar";
 		header("refresh: 1;index.php");
-	}*/
+	}
 
 	mysqli_close($conexao);
 ?>
