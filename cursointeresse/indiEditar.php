@@ -1,13 +1,15 @@
 <?php  
 	include('funcoes.php');
 	$funcoes = new Funcoes();
-	$conexao = mysqli_connect('localhost','root','','lead');
+	require_once 'classes/config.php';
+	$conecta = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-	if ($conexao) {
-		// echo "Conectado com sucesso<br>";
-	} else {
-		echo "Erro ao conectar no banco de dados<br>";		
-	}
+		if (mysqli_connect_errno()) {
+			// echo "Conexão falhou";
+			die("Conexão falhou: ".mysqli_connect_errno() );
+		} else {
+			// echo "Conectado com sucesso";		
+		}
 
 	$id = $_GET['id'];
 	$consulta = " select 
@@ -25,7 +27,7 @@
 	
 
 
-	$op_insercao = mysqli_query($conexao, $consulta);
+	$op_insercao = mysqli_query($conecta, $consulta);
 	/*var_dump($op_insercao);
 	exit();*/
 
@@ -33,7 +35,7 @@
 	$execute_sql_individuo = mysqli_query($conexao, $sql_individuo);*/
 	
 	$sql_cursos = "select * from tb_cursos";
-	$execute_sql_cursos = mysqli_query($conexao, $sql_cursos);
+	$execute_sql_cursos = mysqli_query($conecta, $sql_cursos);
 	
 
 	foreach ($op_insercao as $key => $dados) {
@@ -64,7 +66,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tela de Usuário</title>
+	<title>Cadastro de Interessados</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 
@@ -81,14 +83,29 @@
 			color: #fff;
 		}
 
+		.input-group-prepend {
+		    width: 10%;
+		}
+
+		.input-group-text.bg-warning {
+		    width: 100%;
+		}
+
 
 	</style>
 </head>
 <body>
 	<main>
 	<div class="container text-center">
-		<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Editar Candidatos</h1>
-		<form action="salvar.php" method="get">
+		<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Editar Cadastro</h1>
+		<form action="editar.php" method="get">
+			<!-- coloquei um display none para ficar invicivel -->
+			<div class="input-group mb-2"  style="display: none;">
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning" >Código</div>
+				</div>
+				<input  readonly="" type="text" name="id" value="<?php echo $id ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username" >
+			</div>
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Nome</div>
@@ -130,7 +147,8 @@
 			   <div class="col-sm-2"></div>
 			   <div class="col-sm-2"></div>
 			   <div class="col-sm-2" id="grupo-salvar"> 
-			   		<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-plus"></i></button>
+			   		<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-edit btnedit"></i></button>
+			   		<input class="btn btn-default" type='button' value='Voltar' onclick='history.go(-1)' />
 			   </div>
 			</div>
 			

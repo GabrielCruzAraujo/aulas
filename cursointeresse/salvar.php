@@ -1,11 +1,22 @@
-<?php  
-	$conexao = mysqli_connect('localhost','root','','lead');
 
-	if ($conexao) {
-		// echo "Conectado com sucesso<br>";
-	} else {
-		echo "Erro ao conectar no banco de dados<br>";		
-	}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<?php  
+	require_once 'classes/config.php';
+	$conecta = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+		if (mysqli_connect_errno()) {
+			// echo "Conexão falhou";
+			die("Conexão falhou: ".mysqli_connect_errno() );
+			} else {
+				// echo "Conectado com sucesso";		
+			}
 
 	// DEFINE O FUSO HORARIO COMO O HORARIO DE BRASILIA
     date_default_timezone_set('America/Sao_Paulo');
@@ -24,17 +35,33 @@
 
 	
 
-	$op_insercao = mysqli_query($conexao, $sql);			
+	$op_insercao = mysqli_query($conecta, $sql);			
 	
 
 	if ($op_insercao) {
-		echo "Salvo com sucesso!";
-		header("refresh: 1;index.php");
+		echo "Salvo com sucesso!";		
+		echo "<script type=\"text/javascript\">
+		  window.setTimeout(\"location.href='index.php';\", 1000);
+		</script>";
+
+
+		
+		
 
 	} else {
 		echo "Erro ao tentar salvar";
-		header("refresh: 1;index.php");
+		echo "<script type=\"text/javascript\">
+		  window.setTimeout(\"location.href='index.php';\", 1000);
+		</script>";
+
+		
 	}
 
-	mysqli_close($conexao);
+	mysqli_close($conecta);
+
+
 ?>
+
+
+</body>
+</html>

@@ -1,30 +1,17 @@
 <?php  
-	/*include('funcoes.php');
-	$funcoes = new Funcoes();*/
-	$conexao = mysqli_connect('localhost','root','','lead');
+	include 'classes/funcoes.php';
+	$funcoes = new Funcoes();
+	require_once 'classes/config.php';
+	$conecta = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+		if (mysqli_connect_errno()) {
+				// echo "Conexão falhou";
+				die("Conexão falhou: ".mysqli_connect_errno() );
+				} else {
+					// echo "Conectado com sucesso";		
+				}
 
-	if ($conexao) {
-		/*echo "Conectado com sucesso<br>";*/
-	} else {
-		echo "Erro ao conectar no banco de dados<br>";		
-	}
-		$consulta = " select 
-						i.id , i.nome as nome_individuo,
-						c.id as id_curso, c.nome_curso as desc_curso ,
-                        i.telefone, i.data_cadastro
-					from 
-						tb_individuo i 
-						inner join tb_cursos c on c.id = i.id_curso
-					order by
-						i.id desc ;" ;
-		
-		$op_insercao = mysqli_query($conexao, $consulta);
-
-		/*$sql_individuo = "select * from tb_individuo";
-		$execute_sql_individuo = mysqli_query($conexao, $sql_individuo);*/
-	
-		$sql_cursos = "select * from tb_cursos";
-		$execute_sql_cursos = mysqli_query($conexao, $sql_cursos);
+	$op_insercao = $funcoes->listarJoinIndividuo();
+	$execute_sql_cursos = $funcoes->listarCursos();
 
 	
 	?>
@@ -33,7 +20,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Curso de Interesse</title>
+	<title>Cadastro de Interessados</title>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 
@@ -41,15 +28,13 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<style type="text/css">
-		* button {
-			margin: 1.5em 0.5em;
-			padding: 0.3em 1.4em;
+		.input-group-prepend {
+		    width: 10%;
 		}
 
-		i {
-			color: #fff;
+		.input-group-text.bg-warning {
+		    width: 100%;
 		}
-
 
 	</style>
 </head>
@@ -57,7 +42,8 @@
 <body>
 	<main>
 	<div class="container text-center">
-		<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Cadastro de Candidatos</h1>
+		<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Cadastro de Interessados</h1>
+		
 		<form action="salvar.php" method="get">
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
@@ -120,8 +106,9 @@
 					<td><?php echo $dado["nome_individuo"]; ?></td>
 					<td><?php echo $dado["desc_curso"]; ?></td>
 					<td><?php echo $dado["telefone"]; ?></td>
-					<td><?php echo $dado["data_cadastro"]; ?></td>
-					<td><a href="indiEditar.php?id=<?php echo $dado['id']; ?>"i class="fas fa-edit btnedit"></i></td>
+					<td><?php echo $funcoes->dataHoraPtBr($dado["data_cadastro"]); ?></td>
+					<td><a href="indiEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></td>
+					<td><a href="excluir.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>	
 				</tr>
 				<?php endforeach ?>
 

@@ -1,45 +1,47 @@
 <?php  
 	include 'funcoes.php';
+	require_once 'classes/config.php';
 	$funcoes = new Funcoes();
 
-	$conexao = mysqli_connect('localhost','root','','lead');
+	$conecta = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-	if ($conexao) {
-		// echo "Conectado com sucesso<br>";
-	} else {
-		echo "Erro ao conectar no banco de dados<br>";		
-	}
+		if (mysqli_connect_errno()) {
+			// echo "Conexão falhou";
+			die("Conexão falhou: ".mysqli_connect_errno() );
+			} else {
+				// echo "Conectado com sucesso";		
+			}
 
 	$id = $_GET['id'];
 	$nome = $_GET['nome'];
 	$telefone = $_GET['telefone'];
 	$id_curso = $_GET['id_curso'];
-	$data_cadastro = $_GET['data_cadastro'];
+	/*$data_cadastro = $_GET['data_cadastro'];*/
 
 	$sql = " update tb_individuo
-		 		 set nome_individuo = '$nome', telefone = '$telefone'
+		 		 set nome = '$nome', telefone = '$telefone',id_curso = '$id_curso'
 		 		 where id = '$id' ";
 
-	$sql2 = " update tb_cursos
-				set id_curso = 'id_curso'
-				where id = '$id'";
-
-	$op_insercao1 = mysqli_query($conexao, $sql);			
-	$op_insercao2 = mysqli_query($conexao, $sql2);			
 	
 
-	/*if ($op_insercao1) {
-		if ($op_insercao2) {
-			echo "Editado com sucesso!";
-			header("refresh: 2;index.php");
-			
-		}
+	$op_insercao1 = mysqli_query($conecta, $sql);			
+	
+	
 
+	if ($op_insercao1) {
+		
+			echo "Editado com sucesso!";
+			echo "<script type=\"text/javascript\">
+		  	window.setTimeout(\"location.href='index.php';\", 1000);
+			</script>";
+		
 	} else {
 		echo "Erro ao tentar editar";
-		header("refresh: 2;index.php");
-	}*/
+		echo "<script type=\"text/javascript\">
+		window.setTimeout(\"location.href='index.php';\", 1000);
+		</script>";
+	}	
 
-	mysqli_close($conexao);
+	mysqli_close($conecta);
 				 		 
 ?>	

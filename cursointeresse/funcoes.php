@@ -10,16 +10,18 @@ class Funcoes
 
 	function ultimoId($tabela='')
 	{
-		$conexao = mysqli_connect('localhost','root','','lead');
+		require_once 'classes/config.php';
+		$conecta = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-		if ($conexao) {
-			// echo "Conectado com sucesso<br>";
-		} else {
-			echo "Erro ao conectar no banco de dados<br>";		
-		}
+			if (mysqli_connect_errno()) {
+			// echo "Conexão falhou";
+			die("Conexão falhou: ".mysqli_connect_errno() );
+			} else {
+			// echo "Conectado com sucesso";		
+			}
 		$sql = "select * from $tabela order by id desc limit 1 ";
 
-		$op_insercao = mysqli_query($conexao, $sql);
+		$op_insercao = mysqli_query($conecta, $sql);
 
 		
 		foreach ($op_insercao as $key => $value) {
