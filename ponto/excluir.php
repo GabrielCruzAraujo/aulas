@@ -7,12 +7,14 @@ $conexao = mysqli_connect('localhost','root','','ponto');
 		echo "Banco não conectado <br>";
 	}
 
-	$id = $_GET['id']; 
+	$id = $_GET['id'];
+	$sql2 = "delete from dado_funcional
+			where id_pessoa = '$id'";  
+	
 	$sql = " delete from pessoa
 			where id_pessoa ='$id'";
 	
-	$sql2 = "delete from dado_funcional
-			where id_pessoa = '$id'"; 		
+			
 
 	$op_insercao2 = mysqli_query($conexao, $sql2);
 	$op_insercao = mysqli_query($conexao, $sql);

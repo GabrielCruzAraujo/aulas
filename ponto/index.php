@@ -49,6 +49,16 @@
 		i {
 			color: #fff;
 		}
+
+		/*.input-group-prepend {
+		    width: 10%;
+		}
+
+		.input-group-text.bg-warning {
+		    width: 100%;*/
+	/*	}*/
+
+	</style>
 	</style>
 <body>
 	
@@ -58,56 +68,71 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<body>
-		<main>
-			<div class="container text-center">
-				<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Tela de Usuário</h1>
+	<main>
+	<div class="container text-center">
+		<h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Tela de Usuário</h1>
 
-	</body>
+	
 
 
 	<form action="salvar.php" method="get">
 		<div class="input-group mb-2">
-		<div class="input-group-prepend">
-				<div class="input-group-text bg-warning"></i>Nome</div>
+			<div class="input-group-prepend">
+				<div class="input-group-text bg-warning">Nome</div>
 			</div>
-		<input type="text" name="nome_pessoa" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+			<input type="text" name="nome_pessoa" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+		</div>
 		<div class="input-group mb-2">	   	
 			<div class="input-group-prepend">
-				<div class="input-group-text bg-warning"></i>Email</div>
+				<div class="input-group-text bg-warning">Email</div>
 			</div>
 			<input type="text" name="email" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username">
 		</div>	
 
-		<!-- 
-		<label for="grupo_emprego"> Grupo</label>
+		
+		<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Grupo</div>
+				</div>	
 		<select name="id_grupo">
 			<option>Selecione</option>
 			<?php foreach ($execute_sql_grupo_emprego as $key => $linha): ?>
 				<option value="<?php echo $linha['id_grupo'] ?>"><?php echo utf8_encode($linha['nome_grupo']) ?></option>
 			<?php endforeach ?>
 		</select><br/>
-		<label for="categoria"> Categoria</label>
+		</div>
+		<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Categoria</div>
+				</div>	
 		<select name="id_categoria">
 			<option>Selecione</option>
 			<?php foreach ($execute_sql_curso as $key => $linha): ?>
 				<option value="<?php echo $linha['id_categoria'] ?>"><?php echo utf8_encode($linha['nome_categoria']) ?></option>
 			<?php endforeach ?>
 		</select><br/>
-		<label for="orgao"> Orgão Lotação</label>
+		</div>
+		<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Orgão Lotação</div>
+				</div>	
 		<select name="id_orgao_lotacao">
 			<option>Selecione</option>
 			<?php foreach ($execute_sql_orgao as $key => $linha): ?>
 				<option value="<?php echo $linha['id_orgao'] ?>"><?php echo utf8_encode($linha['nome_orgao']) ?></option>
 			<?php endforeach ?>
 		</select><br/>
-		<label for="orgao"> Orgão Exercicio</label>
+		</div>
+		<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Orgão Exercício</div>
+				</div>	
 		<select name="id_orgao_exercicio">
 			<option>Selecione</option>
 			<?php foreach ($execute_sql_orgao as $key => $linha): ?>
 				<option value="<?php echo $linha['id_orgao'] ?>"><?php echo utf8_encode($linha['nome_orgao']) ?></option>
 			<?php endforeach ?>
-		</select><br/> -->
+		</select><br/>
 		<div class="input-group mb-2">			
 		   <div class="col-sm-2"></div>
 		   <div class="col-sm-2"></div>
@@ -117,6 +142,7 @@
 		   <div class="col-sm-2" id="grupo-salvar"> 
 		   		<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-plus"></i></button>
 		   </div>
+		</div>
 		<!-- <input type="text" name="Pesquisar">
 		<button type="submit">Pesquisar</button><br/> -->
 
@@ -129,10 +155,10 @@
 			<tr>
 				<td>ID</td>
 				<td>Nome</td>
-				<!-- <td>Id_Grupo</td>
-				<td>Id_Categoria</td>
-				<td>Orgao_Lotacao</td>
-				<td>Orgao_Exercicio</td> -->
+				<td>Grupo</td>
+				<td>Categoria</td>
+				<td>Orgão Lotacao</td>
+				<td>Orgão Exercicio</td>
 				<td>Email</td>
 				<td></td>
 				
@@ -142,12 +168,12 @@
 			<tr>
 				<td><?php echo $dado["id_pessoa"]; ?></td>
 				<td><?php echo $dado["nome_pessoa"]; ?></td>
-				<!-- <td><?php echo utf8_encode($dado["nome_grupo"]); ?></td>
+				<td><?php echo utf8_encode($dado["nome_grupo"]); ?></td>
 				<td><?php echo utf8_encode($dado["nome_categoria"]); ?></td>
 				<td><?php echo utf8_encode($dado["orgao_lotacao"]); ?></td>
-				<td><?php echo utf8_encode($dado["orgao_exercicio"]); ?></td> -->
+				<td><?php echo utf8_encode($dado["orgao_exercicio"]); ?></td>
 				<td><?php echo $dado["email"]; ?></td>
-				<td><a href="cadEditar.php?id=<?php echo $dado['id_pessoa']; ?>"i class="fas fa-edit btnedit"></i></td>
+				<td><a href="cadEditar.php?id=<?php echo $dado['id_pessoa']; ?>"><i class="fas fa-edit btnedit"></i></td>
 				<td><a href="excluir.php?id=<?php echo $dado['id_pessoa']; ?>"><i class="fas fa-trash-alt"></i></a></td> 
 			</tr>
 			<?php  
