@@ -2,7 +2,7 @@
 	$conexao = mysqli_connect('localhost','root','','locadora');
 
 	if ($conexao) {
-		// echo "Conectado com sucesso<br>";
+		/*echo "Conectado com sucesso<br>";*/
 	} else {
 		echo "Erro ao conectar no banco de dados<br>";		
 	}
@@ -10,6 +10,8 @@
 	$op_insercao = mysqli_query($conexao, $consulta);
 
 	?>
+	
+
 <!DOCTYPE html>
 <html>
 <head>
