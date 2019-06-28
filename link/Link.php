@@ -49,6 +49,7 @@
 			<a href="../fac/index.php">Fac</a>
 			<a href="../completecrud/index.php">Crud</a>
 			<a href="../instituicao/index.php">Instituição</a>
+			<a href="../cursointeresse/index.php">Curso de Interesse</a>
 		</div>
 	</div>
 </body>
