@@ -16,11 +16,13 @@
 	$nome = $_GET['nome'];
 	$telefone = $_GET['telefone'];
 	$id_curso = $_GET['id_curso'];
+	$email = $_GET['email'];
+	$observacao = $_GET['observacao'];
 	/*$data_cadastro = $_GET['data_cadastro'];*/
 
 	$sql = " update tb_individuo
-		 		 set nome = '$nome', telefone = '$telefone',id_curso = '$id_curso'
-		 		 where id = '$id' ";
+			set nome = '$nome', telefone = '$telefone',id_curso = '$id_curso', email = '$email', observacao = '$observacao'
+			where id = '$id' ";
 
 	
 

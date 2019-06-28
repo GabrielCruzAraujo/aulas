@@ -10,11 +10,21 @@
 					// echo "Conectado com sucesso";		
 				}
 
-	$op_insercao = $funcoes->listarJoinIndividuo();
+	
 	$execute_sql_cursos = $funcoes->listarCursos();
 
-	
-	?>
+	if (isset($_GET['pesquisar'])) {
+		$pesquisar = $_GET['pesquisar'];
+		$op_insercao = $funcoes->listarJoinIndividuoLike($pesquisar);
+		
+		
+
+	} else {
+		$op_insercao = $funcoes->listarJoinIndividuo();	
+		
+	}
+
+?>
 
 
 <!DOCTYPE html>
@@ -71,6 +81,20 @@
 
 				<input required=""  type="text" name="telefone" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Telefone"><br>		
 			</div>
+
+			<div class="input-group mb-2">	   	
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Email</div>
+				</div>
+
+				<input required=""  type="text" name="email" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="email"><br>		
+			</div>
+			<div class="input-group mb-2">	   	
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Observações </div>
+				</div>
+					<textarea name="observacao" rows="10" cols="20" maxlength="500"></textarea>
+			</div>	
 			<div class="input-group mb-2">			
 			   <div class="col-sm-2"></div>
 			   <div class="col-sm-2"></div>
@@ -81,9 +105,12 @@
 			   		<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-plus"></i></button>
 			   </div>
 			</div>
-			<!-- <input type="text" name="Pesquisar">
-			<button type="submit">Pesquisar</button><br/> -->
 
+		</form>
+
+		<form method="get">
+			<input type="text" name="pesquisar">
+			<button type="submit">Pesquisar</button><br/>
 		</form>
 	
 		<div class="d-flex table-data">
@@ -107,7 +134,7 @@
 					<td><?php echo $dado["desc_curso"]; ?></td>
 					<td><?php echo $dado["telefone"]; ?></td>
 					<td><?php echo $funcoes->dataHoraPtBr($dado["data_cadastro"]); ?></td>
-					<td><a href="indiEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></td>
+					<td><a href="indiEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></a></td>
 					<td><a href="excluir.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>	
 				</tr>
 				<?php endforeach ?>

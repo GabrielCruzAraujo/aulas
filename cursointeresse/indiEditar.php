@@ -15,7 +15,7 @@
 	$consulta = " select 
 						i.id , i.nome as nome_individuo,
 						c.id as id_curso, c.nome_curso as desc_curso ,
-                        i.telefone, i.data_cadastro
+                        i.telefone, i.data_cadastro,email,observacao
 					from 
 						tb_individuo i 
 						inner join tb_cursos c on c.id = i.id_curso
@@ -44,6 +44,8 @@
 			$telefone = $dados['telefone'];
 			$id_curso = $dados['id_curso'];
 			$data_cadastro = $dados['data_cadastro'];
+			$email = $dados['email'];
+			$observacao = $dados['observacao'];
 
 
 
@@ -140,6 +142,19 @@
 
 				<input required="" type="text" name="telefone" value="<?php echo $telefone ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Telefone"><br>		
 			</div>
+			<div class="input-group mb-2">	   	
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Email</div>
+				</div>
+
+				<input required=""  type="text" name="email" value="<?php echo $email?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="email"><br>		
+			</div>
+			<div class="input-group mb-2">	   	
+				<div class="input-group-prepend">
+					<div class="input-group-text bg-warning">Observações </div>
+				</div>
+					<textarea name="observacao"  rows="10" cols="40" maxlength="500"><?php echo $observacao?>"</textarea>
+			</div>	
 			<div class="input-group mb-2">			
 			   <div class="col-sm-2"></div>
 			   <div class="col-sm-2"></div>

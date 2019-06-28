@@ -23,13 +23,15 @@
 	$nome = $_GET['nome'];
 	$telefone = $_GET['telefone'];
 	$id_curso = $_GET['id_curso'];
-	$datacadastro =  date('y-m-d H:i:s');  //'2019-12-25 00:00:00'
+	$datacadastro =  date('y-m-d H:i:s');
+	$email = $_GET['email'];
+	$observacao = $_GET['observacao']; //'2019-12-25 00:00:00'
 
 
-	$sql = "insert into tb_individuo
-			(nome,telefone,id_curso,data_cadastro)
+	$sql = " insert into tb_individuo
+			(nome,telefone,id_curso,data_cadastro,email,observacao)
 			values
-			('$nome','$telefone','$id_curso','$datacadastro');";
+			('$nome','$telefone','$id_curso','$datacadastro','$email','$observacao');";
 
 		
 
