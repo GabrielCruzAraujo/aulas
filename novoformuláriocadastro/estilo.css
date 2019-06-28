@@ -1,0 +1,18 @@
+#grupo-salvar {
+	text-align: right;   
+	margin-right: 0px ;
+	padding-right: 0px ;
+}	
+
+#btn-salvar {
+	margin-right: 0px;
+}
+
+* button {
+	margin: 1.5em 0.5em;
+	padding: 0.3em 1.4em;
+}
+
+i {
+	color: #fff;
+}

@@ -1,61 +1,33 @@
 
-<?php  
-	$id = $_GET['id'];
-	$conexao = mysqli_connect('localhost','root','','ponto');
+<?php
+	include 'funcoes.php';
+	$funcoes = new Funcoes();  
+	/*$id = $_GET['id'];*/
+	$conexao = mysqli_connect('localhost','root','','novo_cadastro');
 
 	if ($conexao) {
 		// echo "Conectado com sucesso<br>";
 	} else {
 		echo "Erro ao conectar no banco de dados<br>";		
 	}
-	$consulta = "SELECT * FROM pessoa where id = '$id' limit 1 ";
+	$id = $_GET['id_individuo'];
+	$nome = $_GET['desc_individuo'];
+	$id_curso = $_GET['id_curso'];
 
-	$op_insercao = mysqli_query($conexao, $consulta);
+	$sql = " update individuo
+				set Descricao = '$nome', id_curso = $id_curso
+				where Id = '$id'; ";
 
-	foreach ($op_insercao as $key => $dados) {
-		$nome = $dados['nome_pessoa'];
-		$email = $dados['email'];
-		
-		if ( isset($_GET['id']) ) {
-		$id = $_GET['id'];
-		$sql = "update pessoa
-		 		 set nome_pessoa = '$nome', email = '$email'
-		 		 where id = '$id' ";
-	}
-
+	$op_insercao = mysqli_query($conexao, $sql);
 	
+	if ($op_insercao) {
+		echo "Editado com sucesso!";
+		header("refresh: 2;index.php");
+	} else {
+		echo "Erro ao tentar editar";
+		header("refresh: 2;index.php");
+	}
+				
+	mysqli_close($conexao)
 
 	?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Ponto</title>
-	<style type="text/css">
-
-		#btn {
-			background: orange;
-		}
-
-
-		.btn {
-			background: blue;
-		}
-
-	</style>
-</head>
-<body>
-
-	<form action="salvar.php" method="get">
-		<input style="display: none;" type="text" name="id" value="<?php echo $id ?>">
-		<label>Nome</label>
-		<input type="text" name="nome" required="" value='<?php
-		echo $nome ?>'><br/>
-		<label>email</label>
-		<input type="text" name="email" required="" value='<?php echo $email ?>'><br/>
-		<button type="submit">Salvar</button><br/>
-
-
-	</form>
-		
-	</body>
-</html> 
