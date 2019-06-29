@@ -91,7 +91,7 @@
 			</div>
 			<div class="input-group mb-2">	   	
 				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Observações </div>
+					<div class="input-group-text bg-warning">Observações</div>
 				</div>
 					<textarea name="observacao" rows="10" cols="20" maxlength="500"></textarea>
 			</div>	
@@ -117,7 +117,7 @@
 				<table class="table table-striped table-dark">
 					<thead class="thead-dark">
 				<tr>
-					<td>#</td>
+					<td>Código</td>
 					<td>Nome</td>
 					<td>Curso de Interesse</td>
 					<td>Telefone</td>
