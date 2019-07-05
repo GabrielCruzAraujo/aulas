@@ -41,11 +41,11 @@
 		.input-group-prepend {
 		    width: 10%;
 		}
-
+	
 		.input-group-text.bg-warning {
 		    width: 100%;
 		}
-
+	
 	</style>
 </head>
 
@@ -93,7 +93,7 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Observações</div>
 				</div>
-					<textarea name="observacao" rows="10" cols="20" maxlength="500"></textarea>
+					<textarea name="observacao" rows="10" cols="50" maxlength="600"></textarea>
 			</div>	
 			<div class="input-group mb-2">			
 			   <div class="col-sm-2"></div>

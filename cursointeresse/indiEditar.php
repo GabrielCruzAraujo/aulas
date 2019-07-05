@@ -106,7 +106,7 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning" >Código</div>
 				</div>
-				<input  readonly="" type="text" name="id" value="<?php echo $id ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup" placeholder="Username" >
+				<input  readonly="" type="text" name="id" value="<?php echo $id ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 			</div>
 			<div class="input-group mb-2">
 				<div class="input-group-prepend">
@@ -171,6 +171,7 @@
 		</form>
 		
 	</div>
+	
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
