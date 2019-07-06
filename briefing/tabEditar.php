@@ -25,21 +25,28 @@
 		 	$peca_folder = $dados['peca_folder'];
 		 	$peca_camisa = $dados['peca_camisa'];
 		 	$peca_cartaz = $dados['peca_cartaz'];
-		 	$outropecas = $dados['outropecas'];
-		 	$ideiacentral = $dados['ideiacentral'];
+		 	$outropecas = $dados['outro_pecas'];
+		 	$ideiacentral = $dados['ideia_central'];
 		 	$publico = $dados['publico'];
 		 	$veiculo_site = $dados['veiculo_site'];
 		 	$veiculo_rede_social = $dados['veiculo_rede_social'];
 		 	$veiculo_email = $dados['veiculo_email'];
 		 	$veiculo_impresso = $dados['veiculo_impresso'];
 		 	$veiculo_brinde = $dados['veiculo_brinde'];
-		 	$outroveiculo = $dados['outroveiculo'];
+		 	$outroveiculo = $dados['outro_veiculo'];
 		 	$tamanho_a3 = $dados['tamanho_a3'];
 		 	$tamanho_a4 = $dados['tamanho_a4'];
 		 	$tamanho_a5 = $dados['tamanho_a5'];
-		 	$outrotamanho = $dados['outrotamanho'];
+		 	$tamanho_outdoor = $dados['tamanho_outdoor'];
+		 	$tamanho_quadrado = $dados['tamanho_quadrado'];
+		 	$tamanho_tv = $dados['tamanho_tv']
+		 	$tamanho_stories['tamanho_stories']
+		 	$outrotamanho = $dados['outro_tamanho'];
 		 	$prazo = $dados['prazo'];
 		 	$observacoes = $dados['observacoes'];
+		 	$data_entrada = $dados['data_entrada'];
+		 	$data_saida = $dados['data_saida'];
+		 	$status = $dados['status'];
 			
 	}
 
@@ -113,13 +120,13 @@
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning" >Outras Peças</div>
 					</div>
-					<input type="text" name="outropecas" value="<?php echo $outropecas ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+					<input type="text" name="outro_pecas" value="<?php echo $outropecas ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning" >Ideia Central</div>
 					</div>
-					<textarea name="ideiacentral" placeholder="Relacione aqui sua ideia para a produção da peça." value="<?php echo $ideiacentral ?>"  rows="5" style="width: 100%;"></textarea>
+					<textarea name="ideia_central" placeholder="Relacione aqui sua ideia para a produção da peça." value="<?php echo $ideiacentral ?>"  rows="5" style="width: 100%;"></textarea>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
@@ -139,24 +146,63 @@
 					<input name="veiculo_rede_social" value="<?php echo $veiculo_rede_social ?>" type="checkbox" class="custom-control-input" id="veiculo_rede_social">
 					<label class="custom-control-label" for="veiculo_rede_social">Rede Social</label>
 					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="veiculo_email" value="<?php echo $veiculo_email ?>" type="checkbox" class="custom-control-input" id="veiculo_email">
+					<label class="custom-control-label" for="veiculo_email">Email Marketing</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="veiculo_impresso" value="<?php echo $veiculo_impresso ?>" type="checkbox" class="custom-control-input" id="veiculo_impresso">
+					<label class="custom-control-label" for="veiculo_impresso">Impresso</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="veiculo_brinde" value="<?php echo $veiculo_brinde?>" type="checkbox" class="custom-control-input" id="veiculo_brinde">
+					<label class="custom-control-label" for="veiculo_brinde">Brinde</label>
+					</div>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning" >Outros Veiculos</div>
 					</div>
-					<input type="text" name="outroveiculo" value="<?php echo $outroveiculo ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+					<input type="text" name="outro_veiculo" value="<?php echo $outroveiculo ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning" >Tamanho</div>
 					</div>
-					<input type="text" name="tamanho" value="<?php echo $tamanho ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_a3" value="<?php echo $tamanho_a3?>" type="checkbox" class="custom-control-input" id="tamanho_a3">
+					<label class="custom-control-label" for="tamanho_a3">A3</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_a4" value="<?php echo $tamanho_a4?>" type="checkbox" class="custom-control-input" id="tamanho_a4">
+					<label class="custom-control-label" for="tamanho_a4">A4</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_a5" value="<?php echo $tamanho_a5?>" type="checkbox" class="custom-control-input" id="tamanho_a5">
+					<label class="custom-control-label" for="tamanho_a5">A5</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_outdoor" value="<?php echo $tamanho_outdoor?>" type="checkbox" class="custom-control-input" id="tamanho_outdoor">
+					<label class="custom-control-label" for="tamanho_outdoor">Outdoor</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_quadrado" value="<?php echo $tamanho_quadrado?>" type="checkbox" class="custom-control-input" id="tamanho_quadrado">
+					<label class="custom-control-label" for="tamanho_quadrado">Quadrado</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_tv" value="<?php echo $tamanho_tv?>" type="checkbox" class="custom-control-input" id="tamanho_tv">
+					<label class="custom-control-label" for="tamanho_tv">TV</label>
+					</div>
+					<div class="custom-control custom-checkbox">
+					<input name="tamanho_stories" value="<?php echo $tamanho_stories?>" type="checkbox" class="custom-control-input" id="tamanho_stories">
+					<label class="custom-control-label" for="tamanho_stories">Stories</label>
+					</div>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning" >Outros Tamanhos</div>
 					</div>
-					<input type="text" name="outrotamanho" value="<?php echo $outrotamanho ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+					<input type="text" name="outro_tamanho" value="<?php echo $outrotamanho ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
@@ -166,9 +212,27 @@
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
+						<div class="input-group-text bg-warning" >Data de Entrada</div>
+					</div>
+					<input type="text" name="data_entrada" value="<?php echo $data_entrada?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+				</div>
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text bg-warning" >Data Saida</div>
+					</div>
+					<input type="text" name="data_saida" value="<?php echo $data_saida ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+				</div>
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text bg-warning">Status</div>
+					</div>
+			 		<input type="text" name="status" value="<?php echo $status?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 	</div>
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning" >Observações</div>
 					</div>
-					<textarea name="observacoes" value="<?php echo $ideiacentral ?>"  rows="5" style="width: 100%;"></textarea>
+					<textarea name="observacoes" value="<?php echo $observacoes ?>"  rows="5" style="width: 100%;"></textarea>
 				</div>
 				<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-edit btnedit"></i></button>
 

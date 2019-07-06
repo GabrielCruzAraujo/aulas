@@ -57,6 +57,10 @@
 					<label  class="custom-control-label" for="peca_banner">Banner</label>
 				</div>
 				<div class="custom-control custom-checkbox">
+					<input name="peca_folder" type="checkbox" class="custom-control-input" id="peca_folder">
+					<label  class="custom-control-label" for="peca_folder">Folder</label>
+				</div>
+				<div class="custom-control custom-checkbox">
 					<input name="peca_outdoor" type="checkbox" class="custom-control-input" id="peca_outdoor">
 					<label  class="custom-control-label" for="peca_outdoor">Outdoor</label>
 				</div>
@@ -73,13 +77,13 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Outras Peças</div>
 				</div>
-		 		<input type="text" name="outropecas" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+		 		<input type="text" name="outro_pecas" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 			</div>
 		 	<div class="input-group mb-2">
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Ideia Central</div>
 				</div>
-		 		<textarea name="ideiacentral"  placeholder="Relacione aqui sua ideia para a produção da peça." rows="5" style="width: 100%;"></textarea>
+		 		<textarea name="ideia_central"  placeholder="Relacione aqui sua ideia para a produção da peça." rows="5" style="width: 100%;"></textarea>
 			</div>
 		 	<div class="input-group mb-2">
 				<div class="input-group-prepend">
@@ -116,7 +120,7 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Outros Veículos</div>
 				</div>
-		 		<input type="text" name="outroveiculo"value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+		 		<input type="text" name="outro_veiculo"value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 		 	</div>	
 		 	<div class="input-group mb-2">
 				<div class="input-group-prepend">
@@ -128,10 +132,10 @@
 				</div>
 				<div class="custom-control custom-checkbox">
 					<input name="tamanho_a4" type="checkbox" class="custom-control-input" id="tamanho_a4">
-					<label class="custom-control-label" for="tamanho_a">A4</label>
+					<label class="custom-control-label" for="tamanho_a4">A4</label>
 				</div>
 				<div class="custom-control custom-checkbox">
-					<input name="tamanho_a5" type="checkbox" class="custom-control-input" id="tamanho_a">
+					<input name="tamanho_a5" type="checkbox" class="custom-control-input" id="tamanho_a5">
 					<label class="custom-control-label" for="tamanho_a5">A5</label>
 				</div>
 				<div class="custom-control custom-checkbox">
@@ -154,7 +158,7 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Outros Tamanhos</div>
 				</div>
-		 		<input type="text" name="outrotamanho" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+		 		<input type="text" name="outro_tamanho" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 		 		</div>
 			 	<div class="input-group mb-2">
 					<div class="input-group-prepend">
@@ -164,10 +168,29 @@
 			 	</div>
 			 	<div class="input-group mb-2">
 					<div class="input-group-prepend">
+						<div class="input-group-text bg-warning">Data Entrada</div>
+					</div>
+			 		<input type="text" name="data_entrada" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 	</div>
+			 	<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text bg-warning">Data Saida</div>
+					</div>
+			 		<input type="text" name="data_saida" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 	</div>
+			 	<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text bg-warning">Status</div>
+					</div>
+			 		<input type="text" name="status" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 	</div>
+			 	<div class="input-group mb-2">
+					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning">Observações</div>
 					</div>
 			 		<textarea name="observacoes" rows="5" style="width: 100%;"></textarea>
 			 	</div>
+
 				
 				
 
