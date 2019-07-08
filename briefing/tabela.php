@@ -44,9 +44,9 @@
 					<td>Nome</td>
 					<td>Campanha</td>
 					<td>Público Alvo</td>
-					<td>Veiculação</td>
 					<td>Prazo de Entrega</td>
 					<td>Status</td>
+					
 					
 					
 					<!-- Novo 
@@ -66,10 +66,11 @@
 					<td><?php echo $dado['nome']; ?></td>
 					<td><?php echo $dado['campanha']; ?></td>
 					<td><?php echo $dado['publico']; ?></td>
-					<td><?php echo $dado['veiculacao']; ?></td>
 					<td><?php echo $dado['prazo']; ?></td>
+					<td><?php echo $dado['status']; ?></td>
 					<td><a href="tabEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></a></td>
 					<td><a href="excluir.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+					
 					
 					
 					

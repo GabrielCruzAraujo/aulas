@@ -48,13 +48,13 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Peças</div>
 				</div>		 	
-			 	<div class="custom-control custom-checkbox">
-					<input name="peca_panfleto" type="checkbox" class="custom-control-input" id="peca_panfleto">
-					<label class="custom-control-label" for="peca_panfleto">Panfleto</label>
-				</div>
 				<div class="custom-control custom-checkbox">
 					<input name="peca_banner" type="checkbox" class="custom-control-input" id="peca_banner">
 					<label  class="custom-control-label" for="peca_banner">Banner</label>
+				</div>
+			 	<div class="custom-control custom-checkbox">
+					<input name="peca_panfleto" type="checkbox" class="custom-control-input" id="peca_panfleto">
+					<label class="custom-control-label" for="peca_panfleto">Panfleto</label>
 				</div>
 				<div class="custom-control custom-checkbox">
 					<input name="peca_folder" type="checkbox" class="custom-control-input" id="peca_folder">
@@ -126,13 +126,13 @@
 				<div class="input-group-prepend">
 					<div class="input-group-text bg-warning">Tamanho</div>
 				</div>
-		 		<div class="custom-control custom-checkbox">
-					<input name="tamanho_a3" type="checkbox" class="custom-control-input" id="tamanho_a3">
-					<label class="custom-control-label" for="tamanho_a3">A3</label>
-				</div>
 				<div class="custom-control custom-checkbox">
 					<input name="tamanho_a4" type="checkbox" class="custom-control-input" id="tamanho_a4">
 					<label class="custom-control-label" for="tamanho_a4">A4</label>
+				</div>
+		 		<div class="custom-control custom-checkbox">
+					<input name="tamanho_a3" type="checkbox" class="custom-control-input" id="tamanho_a3">
+					<label class="custom-control-label" for="tamanho_a3">A3</label>
 				</div>
 				<div class="custom-control custom-checkbox">
 					<input name="tamanho_a5" type="checkbox" class="custom-control-input" id="tamanho_a5">
@@ -164,26 +164,26 @@
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning">Prazo de Entrega</div>
 					</div>
-			 		<input type="text" name="prazo" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 		<input type="date" name="prazo" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 			 	</div>
 			 	<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning">Data Entrada</div>
 					</div>
-			 		<input type="text" name="data_entrada" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 		<input type="date" name="data_entrada" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 			 	</div>
 			 	<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning">Data Saida</div>
 					</div>
-			 		<input type="text" name="data_saida" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
+			 		<input type="date" name="data_saida" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 			 	</div>
-			 	<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning">Status</div>
-					</div>
+			 	<!-- <div class="input-group mb-2">
+			 						<div class="input-group-prepend">
+			 							<div class="input-group-text bg-warning">Status</div>
+			 						</div>
 			 		<input type="text" name="status" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			 	</div>
+			 	</div> -->
 			 	<div class="input-group mb-2">
 					<div class="input-group-prepend">
 						<div class="input-group-text bg-warning">Observações</div>
@@ -196,14 +196,7 @@
 
 				<button type="submit">Salvar</button>
 
-			</form>
-		<form action="salvar.php" method="get">
-			<!-- Default unchecked -->
-			
-							 	<!-- Default unchecked -->
-			
-			<button type="submit">Enviar</button>
-		</form>
+	
 	</div>
 </main>	
 
