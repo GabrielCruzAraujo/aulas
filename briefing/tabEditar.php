@@ -65,7 +65,19 @@
 
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		.checkbox { 
+			margin-top: 8px;
+			margin-left: 14px;
+		}
+	</style>
+	<style>
+		.corcaixa {
+			background-color: #cccccc;
+		}
+	</style>
 </head>
+
 <body>
 	<main>
 	<div class="container text-center">
@@ -80,202 +92,203 @@
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Nome</div>
+						<div class="input-group-text corcaixa" >Nome</div>
 					</div>
 					<input type="text" name="nome" value="<?php echo $nome ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Campanha</div>
+						<div class="input-group-text corcaixa" >Campanha</div>
 					</div>
 					<input type="text" name="campanha" value="<?php echo $campanha ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
-				<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Peças</div>
+				<div class="input-group mb-2 ">
+					<div class="input-group-prepend ">
+						<div class="input-group-text corcaixa " >Peças</div>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="peca_banner"  type="checkbox" class="custom-control-input" id="peca_banner" <?php if ($peca_banner == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="peca_banner">Banner</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="peca_banner"  type="checkbox" class="custom-control-input" id="peca_banner" <?php if ($peca_banner == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="peca_banner">Banner</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="peca_panfleto" type="checkbox" class="custom-control-input" id="peca_panfleto" <?php if ($peca_panfleto == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="peca_panfleto">Panfleto</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="peca_panfleto" type="checkbox" class="custom-control-input" id="peca_panfleto" <?php if ($peca_panfleto == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="peca_panfleto">Panfleto</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="peca_outdoor" type="checkbox" class="custom-control-input" id="peca_outdoor" <?php if ($peca_outdoor == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="peca_outdoor">Outdoor</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="peca_outdoor" type="checkbox" class="custom-control-input" id="peca_outdoor" <?php if ($peca_outdoor == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="peca_outdoor">Outdoor</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="peca_folder"  type="checkbox" class="custom-control-input" id="peca_folder" <?php if ($peca_folder == 'on'): ?>
-						checked
-					<?php endif ?> >>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="peca_folder"  type="checkbox" class="custom-control-input" id="peca_folder" <?php if ($peca_folder == 'on'): ?>
+							checked
+						<?php endif ?> >
 					<label class="custom-control-label" for="peca_folder">Folder</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="peca_camisa" type="checkbox" class="custom-control-input" id="peca_camisa" <?php if ($peca_camisa == 'on'): ?>
-						checked
-					<?php endif ?> >>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="peca_camisa" type="checkbox" class="custom-control-input" id="peca_camisa" <?php if ($peca_camisa == 'on'): ?>
+							checked
+						<?php endif ?> >
 					<label class="custom-control-label" for="peca_camisa">Camisa</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="peca_cartaz" type="checkbox" class="custom-control-input" id="peca_cartaz" <?php if ($peca_cartaz == 'on'): ?>
-						checked
-					<?php endif ?> >>
+						<div class="custom-control custom-checkbox checkbox">
+						<input name="peca_cartaz" type="checkbox" class="custom-control-input" id="peca_cartaz" <?php if ($peca_cartaz == 'on'): ?>
+							checked
+						<?php endif ?> >
 					<label class="custom-control-label" for="peca_cartaz">Cartaz</label>
 					</div>
 				</div>	
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Outras Peças</div>
+						<div class="input-group-text corcaixa" >Outras Peças</div>
 					</div>
 					<input type="text" name="outro_pecas" value="<?php echo $outropecas ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Ideia Central</div>
+						<div class="input-group-text corcaixa" >Ideia Central</div>
 					</div>
 					<textarea name="ideia_central" placeholder="Relacione aqui sua ideia para a produção da peça." value="<?php echo $ideiacentral ?>"  rows="5" style="width: 100%;"></textarea>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Público Alvo</div>
+						<div class="input-group-text corcaixa" >Público Alvo</div>
 					</div>
 					<textarea name="publico" placeholder="Descreva as pessoas a serem atingidas." value="<?php echo $publico ?>"  rows="5" style="width: 100%;"></textarea>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Veiculação</div>
+						<div class="input-group-text corcaixa" >Veiculação</div>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="veiculo_site" type="checkbox" class="custom-control-input" id="veiculo_site" <?php if ($veiculo_site == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="veiculo_site">Site</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="veiculo_site" type="checkbox" class="custom-control-input" id="veiculo_site" <?php if ($veiculo_site == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="veiculo_site">Site</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="veiculo_rede_social" type="checkbox" class="custom-control-input" id="veiculo_rede_social" <?php if ($veiculo_rede_social == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="veiculo_rede_social">Rede Social</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="veiculo_rede_social" type="checkbox" class="custom-control-input" id="veiculo_rede_social" <?php if ($veiculo_rede_social == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="veiculo_rede_social">Rede Social</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="veiculo_email" type="checkbox" class="custom-control-input" id="veiculo_email" <?php if ($veiculo_email == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="veiculo_email">Email Marketing</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="veiculo_email" type="checkbox" class="custom-control-input" id="veiculo_email" <?php if ($veiculo_email == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="veiculo_email">Email Marketing</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="veiculo_impresso" type="checkbox" class="custom-control-input" id="veiculo_impresso" <?php if ($veiculo_impresso == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="veiculo_impresso">Impresso</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="veiculo_impresso" type="checkbox" class="custom-control-input" id="veiculo_impresso" <?php if ($veiculo_impresso == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="veiculo_impresso">Impresso</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="veiculo_brinde" type="checkbox" class="custom-control-input" id="veiculo_brinde" <?php if ($veiculo_brinde == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="veiculo_brinde">Brinde</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="veiculo_brinde" type="checkbox" class="custom-control-input" id="veiculo_brinde" <?php if ($veiculo_brinde == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="veiculo_brinde">Brinde</label>
 					</div>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Outros Veiculos</div>
+						<div class="input-group-text corcaixa" >Outros Veiculos</div>
 					</div>
 					<input type="text" name="outro_veiculo" value="<?php echo $outroveiculo ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Tamanho</div>
+						<div class="input-group-text corcaixa" >Tamanho</div>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_a3"  type="checkbox" class="custom-control-input" id="tamanho_a3"  <?php if ($tamanho_a3 == 'on'): ?>
-						checked
-					<?php endif ?>  >
-					<label class="custom-control-label" for="tamanho_a3">A3</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_a3"  type="checkbox" class="custom-control-input" id="tamanho_a3"  <?php if ($tamanho_a3 == 'on'): ?>
+							checked
+						<?php endif ?>  >
+						<label class="custom-control-label" for="tamanho_a3">A3</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_a4" type="checkbox" class="custom-control-input" id="tamanho_a4"  <?php if ($tamanho_a4 == 'on'): ?>
-						checked
-					<?php endif ?> >
-					<label class="custom-control-label" for="tamanho_a4">A4</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_a4" type="checkbox" class="custom-control-input" id="tamanho_a4"  <?php if ($tamanho_a4 == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="tamanho_a4">A4</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_a5" type="checkbox" class="custom-control-input" id="tamanho_a5" <?php if ($tamanho_a5 == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="tamanho_a5">A5</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_a5" type="checkbox" class="custom-control-input" id="tamanho_a5" <?php if ($tamanho_a5 == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="tamanho_a5">A5</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_outdoor"  type="checkbox" class="custom-control-input" id="tamanho_outdoor" <?php if ($tamanho_outdoor == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="tamanho_outdoor">Outdoor</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_outdoor"  type="checkbox" class="custom-control-input" id="tamanho_outdoor" <?php if ($tamanho_outdoor == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="tamanho_outdoor">Outdoor</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_quadrado"  type="checkbox" class="custom-control-input" id="tamanho_quadrado" <?php if ($tamanho_quadrado == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="tamanho_quadrado">Quadrado</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_quadrado"  type="checkbox" class="custom-control-input" id="tamanho_quadrado" <?php if ($tamanho_quadrado == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="tamanho_quadrado">Quadrado</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_tv" type="checkbox" class="custom-control-input" id="tamanho_tv" <?php if ($tamanho_tv == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="tamanho_tv">TV</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_tv" type="checkbox" class="custom-control-input" id="tamanho_tv" <?php if ($tamanho_tv == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="tamanho_tv">TV</label>
 					</div>
-					<div class="custom-control custom-checkbox">
-					<input name="tamanho_stories" type="checkbox" class="custom-control-input" id="tamanho_stories" <?php if ($tamanho_stories == 'on'): ?>
-						checked
-					<?php endif ?> >>
-					<label class="custom-control-label" for="tamanho_stories">Stories</label>
+					<div class="custom-control custom-checkbox checkbox">
+						<input name="tamanho_stories" type="checkbox" class="custom-control-input" id="tamanho_stories" <?php if ($tamanho_stories == 'on'): ?>
+							checked
+						<?php endif ?> >
+						<label class="custom-control-label" for="tamanho_stories">Stories</label>
 					</div>
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Outros Tamanhos</div>
+						<div class="input-group-text corcaixa" >Outros Tamanhos</div>
 					</div>
 					<input type="text" name="outro_tamanho" value="<?php echo $outrotamanho ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Prazo de Entrega</div>
+						<div class="input-group-text corcaixa" >Prazo de Entrega</div>
 					</div>
 					<input type="date" name="prazo" value="<?php echo $prazo ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Data de Entrada</div>
+						<div class="input-group-text corcaixa" >Data de Entrada</div>
 					</div>
 					<input type="date" name="data_entrada" value="<?php echo $data_entrada?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Data Saida</div>
+						<div class="input-group-text corcaixa" >Data Saida</div>
 					</div>
 					<input type="date" name="data_saida" value="<?php echo $data_saida ?>" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
 				</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning">Status</div>
+						<div class="input-group-text corcaixa">Status</div>
 					</div>
 			 		<select name="status">
 					  
-					 <option value="Pendente"
-					  <?php if ($status == 'Pendente'): ?>
-					  		selected
-					  <?php endif ?> >Pendente</option> 
 									 
 					  <option value="Novo" 
 					  <?php if ($status == 'Novo'): ?>
 					  		selected
 					  <?php endif ?> >Novo</option>
+					 
+					 <option value="Pendente"
+					  <?php if ($status == 'Pendente'): ?>
+					  		selected
+					  <?php endif ?> >Pendente</option> 
 
 					  <option value="Processando"
 					  <?php if ($status == 'Processando'): ?>
@@ -296,12 +309,12 @@
 			 	</div>
 				<div class="input-group mb-2">
 					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning" >Observações</div>
+						<div class="input-group-text corcaixa" >Observações</div>
 					</div>
 					<textarea name="observacoes" value="<?php echo $observacoes ?>"  rows="5" style="width: 100%;"></textarea>
 				</div>
-				<button type="submit" class="btn btn-success" id="btn-salvar" ><i class="fas fa-edit btnedit"></i></button>
-				<input class="btn btn-default" type='button' value='Voltar' onclick='history.go(-1)' />
+				<button type="submit" class="btn btn-primary">Salvar Alterações</button>
+				<input class="btn btn-outline-secondary" type='button' value='Voltar' onclick='history.go(-1)' />
 
 			
 		</form>

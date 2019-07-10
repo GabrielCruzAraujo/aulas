@@ -143,8 +143,8 @@
 			values
 			('$nome','$campanha','$peca_banner','$peca_panfleto','$peca_outdoor','$peca_folder','$peca_camisa','peca_cartaz','$outropecas','$ideiacentral','$publico','$veiculo_site','$veiculo_rede_social','$veiculo_email','$veiculo_impresso','$veiculo_brinde','$outroveiculo','$tamanho_a4','$tamanho_a3','$tamanho_a5','$tamanho_outdoor','$tamanho_quadrado','$tamanho_tv','$tamanho_stories','$outrotamanho','$prazo','$observacoes','$data_entrada','$data_saida','$status');";
 
-	echo $data_saida;
-	exit();
+	/*echo $data_saida;
+	exit();*/
 
 	$op_insercao = mysqli_query($conexao, $sql);
 	

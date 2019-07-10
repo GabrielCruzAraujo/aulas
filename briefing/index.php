@@ -1,5 +1,7 @@
 <?php 
-	
+	include 'classes/funcoes.php';
+	$funcoes = new Funcoes();
+
 	$conexao = mysqli_connect('localhost','root','','briefing');
 
 	if ($conexao) {
@@ -8,198 +10,94 @@
 		echo "Erro ao conectar no banco de dados<br>";		
 	}
 
-	mysqli_close($conexao);
- ?>
+	$consulta = " select * from ficha
+					order by id desc; ";
 
- <!DOCTYPE html>
- <html>
- <head>
- 	<title>Cadastro Briefing</title>
- </head>
- <body>
+	$op_insercao = mysqli_query($conexao, $consulta);
+?>
 
- 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
-
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tabela</title>
 	
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+		<link rel="stylesheet" type="text/css" href="estilo.css">
 
-<main>
-	<div class="container text-center">
-		<h1 style="background: #2585b2 !important;;font-family: Lato, sans-serif;" class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Briefing</h1>
-			 	
 
-	 	<form action="salvar.php" method="get">
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Nome</div>
-				</div>
-		 		<input type="text" name="nome" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			</div>
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Campanha</div>
-				</div>
-		 		<input type="text" name="campanha" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			</div>
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Peças</div>
-				</div>		 	
-				<div class="custom-control custom-checkbox">
-					<input name="peca_banner" type="checkbox" class="custom-control-input" id="peca_banner">
-					<label  class="custom-control-label" for="peca_banner">Banner</label>
-				</div>
-			 	<div class="custom-control custom-checkbox">
-					<input name="peca_panfleto" type="checkbox" class="custom-control-input" id="peca_panfleto">
-					<label class="custom-control-label" for="peca_panfleto">Panfleto</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="peca_folder" type="checkbox" class="custom-control-input" id="peca_folder">
-					<label  class="custom-control-label" for="peca_folder">Folder</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="peca_outdoor" type="checkbox" class="custom-control-input" id="peca_outdoor">
-					<label  class="custom-control-label" for="peca_outdoor">Outdoor</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="peca_camisa" type="checkbox" class="custom-control-input" id="peca_camisa">
-					<label  class="custom-control-label" for="peca_camisa">Camisa</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="peca_cartaz" type="checkbox" class="custom-control-input" id="peca_cartaz">
-					<label  class="custom-control-label" for="peca_cartaz">Cartaz</label>
-				</div>
-			</div>
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Outras Peças</div>
-				</div>
-		 		<input type="text" name="outro_pecas" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			</div>
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Ideia Central</div>
-				</div>
-		 		<textarea name="ideia_central"  placeholder="Relacione aqui sua ideia para a produção da peça." rows="5" style="width: 100%;"></textarea>
-			</div>
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Público Alvo</div>
-				</div>
-		 		<textarea name="publico" placeholder="Descreva as pessoas a serem atingidas." rows="5" style="width: 100%;"></textarea>
-		 	</div>	
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Veiculação</div>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="veiculo_site" type="checkbox" class="custom-control-input" id="veiculo_site">
-					<label class="custom-control-label" for="veiculo_site">Site</label>
-				</div>
-		 		<div class="custom-control custom-checkbox">
-					<input name="veiculo_rede_social" type="checkbox" class="custom-control-input" id="veiculo_rede_social">
-					<label class="custom-control-label" for="veiculo_rede_social">Rede Social</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="veiculo_email" type="checkbox" class="custom-control-input" id="veiculo_email">
-					<label class="custom-control-label" for="veiculo_email">Email Marketing</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="veiculo_impresso" type="checkbox" class="custom-control-input" id="veiculo_impresso">
-					<label class="custom-control-label" for="veiculo_impresso">Impresso</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="veiculo_brinde" type="checkbox" class="custom-control-input" id="veiculo_brinde">
-					<label class="custom-control-label" for="veiculo_brinde">Brinde</label>
-				</div>
-			</div>		
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Outros Veículos</div>
-				</div>
-		 		<input type="text" name="outro_veiculo"value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-		 	</div>	
-		 	<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Tamanho</div>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="tamanho_a4" type="checkbox" class="custom-control-input" id="tamanho_a4">
-					<label class="custom-control-label" for="tamanho_a4">A4</label>
-				</div>
-		 		<div class="custom-control custom-checkbox">
-					<input name="tamanho_a3" type="checkbox" class="custom-control-input" id="tamanho_a3">
-					<label class="custom-control-label" for="tamanho_a3">A3</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="tamanho_a5" type="checkbox" class="custom-control-input" id="tamanho_a5">
-					<label class="custom-control-label" for="tamanho_a5">A5</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="tamanho_outdoor" type="checkbox" class="custom-control-input" id="tamanho_outdoor">
-					<label class="custom-control-label" for="tamanho_outdoor">Outdoor</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="tamanho_quadrado" type="checkbox" class="custom-control-input" id="tamanho_quadrado">
-					<label class="custom-control-label" for="tamanho_quadrado">Quadrado</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="tamanho_tv" type="checkbox" class="custom-control-input" id="tamanho_tv">
-					<label class="custom-control-label" for="tamanho_tv">TV</label>
-				</div>
-				<div class="custom-control custom-checkbox">
-					<input name="tamanho_stories" type="checkbox" class="custom-control-input" id="tamanho_stories">
-					<label class="custom-control-label" for="tamanho_stories">Stories</label>
-				</div>
-				<div class="input-group mb-2">
-				<div class="input-group-prepend">
-					<div class="input-group-text bg-warning">Outros Tamanhos</div>
-				</div>
-		 		<input type="text" name="outro_tamanho" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-		 		</div>
-			 	<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning">Prazo de Entrega</div>
-					</div>
-			 		<input type="date" name="prazo" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			 	</div>
-			 	<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning">Data Entrada</div>
-					</div>
-			 		<input type="date" name="data_entrada" required="" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			 	</div>
-			 	<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning">Data Saida</div>
-					</div>
-			 		<input type="date" name="data_saida" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			 	</div>
-			 	<!-- <div class="input-group mb-2">
-			 						<div class="input-group-prepend">
-			 							<div class="input-group-text bg-warning">Status</div>
-			 						</div>
-			 		<input type="text" name="status" value="" autocomplete="off" placeholder="" class="form-control" id="inlineFormInputGroup">
-			 	</div> -->
-			 	<div class="input-group mb-2">
-					<div class="input-group-prepend">
-						<div class="input-group-text bg-warning">Observações</div>
-					</div>
-			 		<textarea name="observacoes" rows="5" style="width: 100%;"></textarea>
-			 	</div>
-
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+			i {
+				color: #fff;
+			}
+		
+		
+			.btnovo {
 				
-				
+				float: right;
+				margin-right: 40px;
+			}
+			.rounded {
+				background: #2585b2 !important;
+				font-family: Lato, sans-serif;
 
-				<button type="submit">Salvar</button>
-
+			}
+			.brnome {
+				margin-left: 40px;
+				float: left;
+			}
+		</style>
+	</head>
 	
-	</div>
-</main>	
+<body>
+	<main>
+		<div class="container text-left ">
+			<h1  class="py-4 bg-dark text-light rounded  ">
+				<i class="fas fa-swatchbook brnome"></i> Briefing
+				<a href="cadastro.php" class="btnovo"><button type="submit" class="btn btn-success " id="btn-salvar" ><i class="fas fa-plus"></i> Criar Briefing</button></a>
+			</h1>
+	
+			<div class="d-flex table-data">
+				<table class="table table-striped table-dark">
+					<thead class="thead-dark">
+		
+				<tr>
+					
+					<td>Código</td>
+					<td>Nome</td>
+					<td>Campanha</td>
+					<td>Público Alvo</td>
+					<td>Prazo de Entrega</td>
+					<td>Status</td>
+				</tr>
+					</thead>
+					
+					<?php foreach ($op_insercao as $key => $dado): ?>				
+				<tr>
+					<td><?php echo $dado['id']; ?></td>
+					<td><?php echo $dado['nome']; ?></td>
+					<td><?php echo $dado['campanha']; ?></td>
+					<td><?php echo $dado['publico']; ?></td>
+					<td><?php echo $funcoes->dataPtBr($dado['prazo']); ?></td>
+					<td><?php echo $funcoes->status($dado['status']); ?></td>
+					<td><a href="tabEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></a></td>
+					<td><a href="excluir.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+					
+				</tr>
+				<?php endforeach ?>
+				</table>
+					
+			</div>
+			
+		</div>				
+					
+</main>
+				
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>	
 </html>
-
+					
+				
