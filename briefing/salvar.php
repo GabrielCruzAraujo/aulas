@@ -1,11 +1,16 @@
 <?php 
 
-	$conexao = mysqli_connect('localhost','root','','briefing');
+	include 'classes/funcoes.php';
+	require_once 'classes/config.php';
 
-	if ($conexao) {
-		/*echo "Conectado com sucesso<br>";
-*/	} else {
-		echo "Erro ao conectar no banco de dados<br>";		
+	$funcoes = new Funcoes();
+
+	$conexao = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+	if (mysqli_connect_errno()) {
+				// echo "Conexão falhou";
+		die("Conexão falhou: ".mysqli_connect_errno() );
+	} else {
+				// echo "Conectado com sucesso";		
 	}
 
 	
