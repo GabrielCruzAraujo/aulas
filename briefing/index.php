@@ -83,8 +83,9 @@
 					<td><?php echo $dado['publico']; ?></td>
 					<td><?php echo $funcoes->dataPtBr($dado['prazo']); ?></td>
 					<td><?php echo $funcoes->status($dado['status']); ?></td>
-					<td><a href="tabEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></a></td>
-					<td><a href="excluir.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+					<td><a title="Editar Briefing" href="tabEditar.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-edit btnedit"></i></a></td>
+
+					<td><a title="Excluir Briefing" href="excluir.php?id=<?php echo $dado['id']; ?>"><i class="fas fa-trash-alt"></i></a></td>
 					
 				</tr>
 				<?php endforeach ?>
