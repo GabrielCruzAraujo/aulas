@@ -141,11 +141,11 @@
  	
  	if ($op_insercao) {
 		echo "Editado com sucesso!";
-		header("refresh: 1;tabela.php");
+		header("refresh: 1;index.php");
 
 	} else {
 		echo "Erro ao tentar editar";
-		header("refresh: 1;tabela.php");
+		header("refresh: 1;index.php");
 	}
 
 	mysqli_close($conexao);		

@@ -11,7 +11,7 @@
 	}
 
 	$consulta = " select * from ficha
-					order by id desc; ";
+					order by prazo desc; ";
 
 	$op_insercao = mysqli_query($conexao, $consulta);
 ?>

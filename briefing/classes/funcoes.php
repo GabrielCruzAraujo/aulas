@@ -23,7 +23,7 @@
 		{
 
 			if ($valor == 'Novo') {
-				echo "<button type='button' class='btn btn-primary btn-sm'>Novo</button>";
+				echo "<button style='width:82.47px; ' type='button' class='btn btn-primary btn-sm'>Novo</button>";
 			} 
 			elseif ($valor == 'Pendente') {
 				echo "<button type='button' class='btn btn-warning btn-sm'>Pendente</button>";
