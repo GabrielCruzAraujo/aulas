@@ -1,7 +1,10 @@
 <?php  
 	include 'classes/funcoes.php';
-	$funcoes = new Funcoes();
 	require_once 'classes/config.php';
+	
+	$funcoes = new Funcoes();
+
+
 	$conecta = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 		if (mysqli_connect_errno()) {
 				// echo "Conexão falhou";
